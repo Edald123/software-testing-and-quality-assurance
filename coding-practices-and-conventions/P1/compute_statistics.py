@@ -100,7 +100,7 @@ def main(file):
     for result in results:
         print(result)
 
-    with open('results.txt', 'w', encoding=locale.getencoding()) as f:
+    with open('statistics_results.txt', 'w', encoding=locale.getencoding()) as f:
         for result in results:
             f.write(result + '\n')
 
