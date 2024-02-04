@@ -1,8 +1,8 @@
-Total lines: 3000
-Valid lines: 3000
-Mean: 1.8790659927977473e+20
-Median: 1.88008049965543e+20
-Mode: No mode
-Standard Deviation: 1.0738205017381e+20
-Variance: 1.1530904699530647e+40
-Time taken: 0.00167083740234375 seconds
+Total lines: 400
+Valid lines: 400
+Mean: 242.32
+Median: 239.5
+Mode: 393.0
+Standard Deviation: 145.25810683056557
+Variance: 21099.917599999997
+Time taken: 0.0002105236053466797 seconds

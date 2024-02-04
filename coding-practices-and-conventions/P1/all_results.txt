@@ -1,0 +1,71 @@
+--TC1--
+Total lines: 400
+Valid lines: 400
+Mean: 242.32
+Median: 239.5
+Mode: 393.0
+Standard Deviation: 145.25810683056557
+Variance: 21099.917599999997
+Time taken: 0.0002167224884033203 seconds
+
+--TC2--
+Total lines: 1977
+Valid lines: 1977
+Mean: 250.7840161861406
+Median: 247.0
+Mode: 230.0
+Standard Deviation: 144.17131868884059
+Variance: 20785.369132479238
+Time taken: 0.0010993480682373047 seconds
+
+--TC3--
+Total lines: 12624
+Valid lines: 12624
+Mean: 249.77621989860583
+Median: 249.0
+Mode: 94.0
+Standard Deviation: 145.31784980917962
+Variance: 21117.27747316329
+Time taken: 0.00630950927734375 seconds
+
+--TC4--
+Total lines: 12624
+Valid lines: 12624
+Mean: 149.00267347908746
+Median: 147.75
+Mode: 123.75
+Standard Deviation: 130.41441961308894
+Variance: 17007.920843018837
+Time taken: 0.007351398468017578 seconds
+
+--TC5--
+Total lines: 311
+Valid lines: 307
+Mean: 241.49511400651465
+Median: 241.0
+Mode: 393.0
+Standard Deviation: 145.46484786056646
+Variance: 21160.021963097748
+Time taken: 0.00018453598022460938 seconds
+
+--TC6--
+Total lines: 3000
+Valid lines: 3000
+Mean: 1.8790659927977473e+20
+Median: 1.88008049965543e+20
+Mode: No mode
+Standard Deviation: 1.0738205017381e+20
+Variance: 1.1530904699530647e+40
+Time taken: 0.0016868114471435547 seconds
+
+--TC7--
+Total lines: 12769
+Valid lines: 12767
+Mean: 2.474673954997149e+20
+Median: 2.4664097307429e+20
+Mode: No mode
+Standard Deviation: 1.4460564700984703e+20
+Variance: 2.0910793147136484e+40
+Time taken: 0.007209300994873047 seconds
+
+
