@@ -5,4 +5,4 @@ Median: 239.5
 Mode: 393.0
 Standard Deviation: 145.25810683056557
 Variance: 21099.917599999997
-Time taken: 0.0002105236053466797 seconds
+Time taken: 0.00021386146545410156 seconds

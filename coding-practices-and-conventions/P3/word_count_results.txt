@@ -199,4 +199,4 @@ significance     1
 coastal          1    
 ------------------------
 
-Time taken: 0.0018246173858642578 seconds
+Time taken: 0.0012547969818115234 seconds
