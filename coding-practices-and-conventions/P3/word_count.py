@@ -12,19 +12,31 @@ def count_words(file):
     """Count the frequency of each word in the file."""
     word_count = {}
     with open(file, 'r', encoding=locale.getencoding()) as f:
-        for line in f:
-            words = line.strip().split()
-            for word in words:
-                if word in word_count:
-                    word_count[word] += 1
-                else:
-                    word_count[word] = 1
+        for line_number, line in enumerate(f, start=1):
+            try:
+                words = line.strip().split()
+                for word in words:
+                    if word in word_count:
+                        word_count[word] += 1
+                    else:
+                        word_count[word] = 1
+            except (UnicodeDecodeError, ValueError) as e:
+                print(f"An error occurred on line {line_number}: {e}")
     return word_count
 
-def print_and_write_results(word_count, file):
-    """Print the word count results and write them to a file."""
-    for word, count in word_count.items():
-        line = f"{word}: {count}"
+def print_and_write_table(word_count, file):
+    """Print the word count results in a tabular form and write them to a file."""
+    results = [["Word", "Count"]]
+    sorted_word_count = sorted(word_count.items(), key=lambda item: item[1], reverse=True)
+    for word, count in sorted_word_count:
+        results.append([word, str(count)])
+
+    widths = [max(map(len, col)) for col in zip(*results)]
+    for row in results:
+        line = "  ".join((val.ljust(width) for val, width in zip(row, widths)))
+        print(line)
+        file.write(line + '\n')
+        line = "-" * (sum(widths) + len(widths) * 2)
         print(line)
         file.write(line + '\n')
 
@@ -36,7 +48,7 @@ def main(file):
 
     # Print and write results to a file
     with open('word_count_results.txt', 'w', encoding=locale.getencoding()) as f:
-        print_and_write_results(word_count, f)
+        print_and_write_table(word_count, f)
         elapsed_time = time.time() - start_time
         print(f"Time taken: {elapsed_time} seconds")
         f.write(f"\nTime taken: {elapsed_time} seconds")
@@ -47,7 +59,4 @@ if __name__ == "__main__":
 
     args = parser.parse_args()
 
-    try:
-        main(args.file)
-    except Exception as e:
-        print(f"An error occurred: {e}")
+    main(args.file)

@@ -1,12 +1,13 @@
 # Exercise context
-## Req1. 
+## Req 1. 
 The program shall be invoked from a
 command line. The program shall receive a
 file as parameter. The file will contain a
 words (presumable between spaces).
 ## Req 2. 
 The program shall identify all
-distinct words and the frequency of them
+## distinct words and the frequenc
+y of them
 (how many times the word “X” appears in
 the file). The results shall be print on a
 screen and on a file named
@@ -21,7 +22,7 @@ file. Errors should be displayed in the
 console and the execution must continue.
 ## Req 4. 
 The name of the program shall be
-wordCount.py (This one is tricky, remember to follow PEP 8)
+wordCount.py
 ## Req 5. 
 The minimum format to invoke the
 program shall be as follows:
@@ -38,15 +39,3 @@ This number shall be included in the
 results file and on the screen.
 ## Req 8. 
 Be compliant with PEP8.
-## Additional Info
-Remember to run pylint on the code.
-
-To install:
-```
-pip install pylint
-```
-
-To use:
-```
-pylint <your_python_file.py>
-```
