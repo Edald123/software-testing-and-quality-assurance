@@ -11,16 +11,29 @@ import locale
 def decimal_to_binary(n):
     """Convert a decimal number to binary using two's complement 
     for negative numbers."""
-    if n >= 0:
-        return bin(n).replace("0b", "")
-    return bin((1 << 10) + n).replace("0b", "")
+    if n == 0:
+        return '0'
+    bits = []
+    if n < 0:  # handle negative numbers
+        n = (1 << 10) + n
+    while n:
+        bits.append(str(n & 1))
+        n >>= 1
+    return ''.join(bits[::-1])
 
 def decimal_to_hexadecimal(n):
     """Convert a decimal number to hexadecimal using two's complement for 
     negative numbers."""
-    if n >= 0:
-        return hex(n).replace("0x", "")
-    return hex((1 << 32) + n).replace("0x", "")
+    if n == 0:
+        return '0'
+    hex_digits = '0123456789ABCDEF'
+    hex_bits = []
+    if n < 0:  # handle negative numbers
+        n = (1 << 32) + n
+    while n:
+        hex_bits.append(hex_digits[n & 15])
+        n >>= 4
+    return ''.join(hex_bits[::-1])\
 
 def print_and_write_table(results, file):
     """Print the results in a tabular form with lines separating the columns and 
