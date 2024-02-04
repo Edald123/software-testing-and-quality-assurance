@@ -57,6 +57,7 @@ def main(file):
     # Print and write results to a file
     with open('convertion_results.txt', 'w', encoding=locale.getencoding()) as f:
         print_and_write_table(results, f)
+        f.write(f"Time taken: {time.time() - start_time} seconds")
 
     print(f"Time taken: {time.time() - start_time} seconds")
 
