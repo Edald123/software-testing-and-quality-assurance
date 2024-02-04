@@ -36,3 +36,20 @@ number shall be included in the results file
 and on the screen.
 ## Req 8. 
 Be compliant with PEP8.
+## Additional Info
+Remember to run pylint on the code.
+
+To install:
+```
+pip install pylint
+```
+
+To use:
+```
+pylint convert_numbers.py
+```
+## Execute script
+To run script:
+```
+python convert_numbers.py TC1.txt
+```

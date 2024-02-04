@@ -48,5 +48,10 @@ pip install pylint
 
 To use:
 ```
-pylint <your_python_file.py>
+pylint compute_statistics.py
+```
+## Execute script
+To run script:
+```
+python compute_statistics.py TC1.txt
 ```
