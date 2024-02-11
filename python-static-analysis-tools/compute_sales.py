@@ -1,6 +1,19 @@
+"""
+This module provides a program to compute the total sales from a sales record 
+and a price catalogue.
+
+The program is invoked from the command line with two JSON files as arguments. 
+It loads the JSON data from the files, computes the total sales, and writes the 
+results to the console and a text file. It also includes error handling for invalid 
+JSON data and measures the time taken to execute the program.
+
+Usage: python compute_sales.py priceCatalogue.json salesRecord.json
+"""
+
 import json
 import time
 import sys
+import locale
 
 def load_json(file):
     """
@@ -16,11 +29,17 @@ def load_json(file):
         SystemExit: If the file cannot be loaded.
     """
     try:
-        with open(file, 'r') as f:
+        with open(file, 'r', encoding=locale.getencoding()) as f:
             data = json.load(f)
         return data
-    except Exception as e:
-        print(f"Error loading JSON file: {e}")
+    except FileNotFoundError:
+        print(f"File {file} not found.")
+        sys.exit(1)
+    except json.JSONDecodeError:
+        print(f"Error decoding JSON from file {file}.")
+        sys.exit(1)
+    except IOError:
+        print(f"IOError with file {file}.")
         sys.exit(1)
 
 def compute_total_sales(price_catalogue, sales_record):
@@ -51,7 +70,7 @@ def write_results(total_sales, elapsed_time):
     """
     result = f"Total sales: {total_sales}\nElapsed time: {elapsed_time} seconds"
     print(result)
-    with open('SalesResults.txt', 'w') as f:
+    with open('SalesResults.txt', 'w', encoding=locale.getencoding()) as f:
         f.write(result)
 
 def main():
