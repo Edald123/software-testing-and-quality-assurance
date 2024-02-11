@@ -48,7 +48,7 @@ screen.
 Be compliant with PEP8.
 
 ## Additional Info
-Remember to run pylint on the code.
+Remember to run **pylint** and **flake8** on the code.
 
 To install:
 ```
@@ -57,10 +57,21 @@ pip install pylint
 
 To use:
 ```
-pylint compute_statistics.py
+pylint compute_sales.py
 ```
+
+To install flake8:
+```
+pip install flake8
+```
+
+To use:
+```
+flake8 compute_sales.py
+```
+
 ## Execute script
 To run script:
 ```
-python compute_statistics.py TC1.txt
+python compute_sales.py priceCatalogue.json salesRecord.json
 ```

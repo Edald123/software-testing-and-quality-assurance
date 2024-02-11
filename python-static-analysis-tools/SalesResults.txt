@@ -1,2 +1,2 @@
-Total sales: 165235.37
-Elapsed time: 0.00047397613525390625 seconds
+Total sales: 2481.8600000000006
+Elapsed time: 0.00027561187744140625 seconds

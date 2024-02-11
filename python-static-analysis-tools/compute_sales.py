@@ -1,11 +1,11 @@
 """
-This module provides a program to compute the total sales from a sales record 
+This module provides a program to compute the total sales from a sales record
 and a price catalogue.
 
-The program is invoked from the command line with two JSON files as arguments. 
-It loads the JSON data from the files, computes the total sales, and writes the 
-results to the console and a text file. It also includes error handling for invalid 
-JSON data and measures the time taken to execute the program.
+The program is invoked from the command line with two JSON files as arguments.
+It loads the JSON data from the files, computes the total sales, and writes the
+results to the console and a text file. It also includes error handling for
+invalid JSON data and measures the time taken to execute the program.
 
 Usage: python compute_sales.py priceCatalogue.json salesRecord.json
 """
@@ -14,6 +14,7 @@ import json
 import time
 import sys
 import locale
+
 
 def load_json(file):
     """
@@ -42,6 +43,7 @@ def load_json(file):
         print(f"IOError with file {file}.")
         sys.exit(1)
 
+
 def compute_total_sales(price_catalogue, sales_record):
     """
     Compute the total sales from a sales record and a price catalogue.
@@ -60,6 +62,7 @@ def compute_total_sales(price_catalogue, sales_record):
                 total_sales += item['price'] * sale['Quantity']
     return total_sales
 
+
 def write_results(total_sales, elapsed_time):
     """
     Write the results to the console and a text file.
@@ -68,10 +71,12 @@ def write_results(total_sales, elapsed_time):
         total_sales (float): The total sales.
         elapsed_time (float): The elapsed time.
     """
-    result = f"Total sales: {total_sales}\nElapsed time: {elapsed_time} seconds"
+    result = (f"Total sales: {total_sales}\n"
+              f"Elapsed time: {elapsed_time} seconds")
     print(result)
     with open('SalesResults.txt', 'w', encoding=locale.getencoding()) as f:
         f.write(result)
+
 
 def main():
     """
@@ -79,7 +84,8 @@ def main():
     """
     # Check the number of command line arguments
     if len(sys.argv) != 3:
-        print("Usage: python compute_sales.py priceCatalogue.json salesRecord.json")
+        print("Usage: python compute_sales.py "
+              "priceCatalogue.json salesRecord.json")
         sys.exit(1)
 
     # Start the timer
@@ -97,6 +103,7 @@ def main():
 
     # Write the results
     write_results(total_sales, elapsed_time)
+
 
 if __name__ == "__main__":
     main()

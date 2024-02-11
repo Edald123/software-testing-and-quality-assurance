@@ -1,0 +1,11 @@
+--TC1--
+Total sales: 2481.8600000000006
+Elapsed time: 0.00027489662170410156 seconds
+
+--TC2--
+Total sales: 166568.22999999998
+Elapsed time: 0.00035071372985839844 seconds
+
+--TC3--
+Total sales: 165235.37
+Elapsed time: 0.000278472900390625 seconds
