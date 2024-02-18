@@ -1,7 +1,12 @@
+"""
+This main module provides a simple command-line interface to the hotel
+reservation system.
+"""
 import abstractions as a
 
 
 def main():
+    """Run the main command-line interface for the hotel reservation system."""
     a.create_hotel('Hotel California', 100)
     a.create_customer('John Doe')
     a.create_reservation('John Doe', 'Hotel California')
