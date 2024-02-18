@@ -132,10 +132,17 @@ def save_to_file(obj, filename):
 
 def load_from_file(cls, filename):
     """Loads an object from a file in JSON format."""
-    if os.path.exists(filename):
-        with open(filename, 'r', encoding=locale.getencoding()) as file:
-            return cls.from_json(file.read())
-    else:
+    try:
+        if os.path.exists(filename):
+            with open(filename, 'r', encoding=locale.getencoding()) as file:
+                return cls.from_json(file.read())
+        else:
+            return None
+    except json.JSONDecodeError as e:
+        print(f"Error loading data from {filename}: Invalid JSON data. {e}")
+        return None
+    except FileNotFoundError:
+        print(f"Error loading data from {filename}: File not found.")
         return None
 
 
