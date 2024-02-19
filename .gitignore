@@ -3,3 +3,5 @@ env
 __pycache__
 .coverage
 python-unit-testing/New Customer Name.customer
+*.customer
+*.hotel

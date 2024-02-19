@@ -52,9 +52,9 @@ The source code must show no warnings
 using Fleak and PyLint.
 
 ## Additional Info
-Remember to run **pylint** and **flake8** on the code.
+Remember to run **pylint**, **flake8** and **unittest** on the code.
 
-To install:
+To install pylint:
 ```
 pip install pylint
 ```
@@ -74,7 +74,7 @@ To use:
 flake8 abstractions.py
 ```
 
-To install coverage:
+To install coverage (for unittest coverage report):
 ```
 pip install coverage
 ```
@@ -86,3 +86,6 @@ coverage report
 ```
 
 ## Execute script
+```
+python3 main.py
+```
